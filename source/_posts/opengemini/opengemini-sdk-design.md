@@ -113,6 +113,23 @@ classDiagram
     BatchPoints "1" *-- "many" Point: contains
 ```
 
+# Meaurement management design
+
+```mermaid
+classDiagram
+   class ValuesResult {
+        + String Measurement
+        + List~Any~ Values
+    }
+
+   class OpenGeminiClient {
+        + []ValuesResult ShowTagKeys(database, command string)
+        + []ValuesResult ShowTagValues(database, command string)
+        + []ValuesResult ShowFieldKeys(database, command string)
+        + []string ShowSeries(database, command string)
+    }
+```
+
 # Sql-like query design
 
 ```mermaid
